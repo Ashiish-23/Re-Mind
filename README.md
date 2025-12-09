@@ -327,7 +327,7 @@ The PT Sans fonts included in `RE-MIND/PT_Sans/` are licensed under the [SIL Ope
 
 ---
 
-**Author:** [Your Name]  
+**Author:** [ Ashish A Lopis and Bipul Dung Dung ]  
 **Version:** 1.0.0  
 **Last Updated:** 2024
 
