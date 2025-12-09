@@ -1,0 +1,43 @@
+BoxLayout:
+    orientation: "vertical"
+    MDToolbar:
+        title: "To-Do App"
+        md_bg_color: app.theme_cls.primary_color
+        elevation: 10
+        left_action_items: [["menu", lambda x: None]]
+        right_action_items: [["clock", lambda x: None]]
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "40dp"
+        padding: "12dp"
+        MDLabel:
+            id: current_time
+            halign: "right"
+            theme_text_color: "SecondaryTextColor"
+
+    ScrollView:
+        ToDoList:
+            id: todo_list
+
+    MDFloatLayout:
+        size_hint: (1, None)
+        height: "50dp"
+        padding: "12dp"
+        MDTextField:
+            id: title_input
+            hint_text: "Title"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.25}
+
+        MDTextField:
+            id: description_input
+            hint_text: "Description"
+            size_hint_x: 0.5
+            pos_hint: {"center_x": 0.75}
+
+        MDDatePicker:
+            id: due_date_picker
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            on_release: app.add_todo(title_input.text, description_input.text, due_date_picker.date)
